@@ -48,6 +48,13 @@ inline static float PID_Saturate(float in, float min, float max){
 	}
 }
 
+void PID_SetTarget(PID_Handle_t *this, float target){
+	if(!this)
+		return;
+	
+	this->target = target;
+}
+
 float PID_Iterate(PID_Handle_t *this){
 	if(!this){
 		return -1.0;
