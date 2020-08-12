@@ -8,7 +8,7 @@
 
 #include "PID.h"
 #include <stdlib.h>
-
+#include <string.h>
 
 PID_Handle_t *PID_Create(){
 	return malloc(sizeof(PID_Handle_t));
@@ -16,7 +16,7 @@ PID_Handle_t *PID_Create(){
 int32_t PID_Initialize(PID_Handle_t *this, float Kp, float Ki, float Kd, float min, float max){
 	if(!this)
 		return -1;
-
+	memset(this, 0, sizeof(PID_Handle_t));
 	this->Kp = Kp;
 	this->Ki = Ki;
 	this->Kd = Kd;
