@@ -28,7 +28,8 @@ typedef struct {
 
 	/* Context */
 	uint32_t status;
-	float error;
+	float prev_error;
+	float curr_error;
 	float i_term;
 	float prev_time;
 	float curr_time;
